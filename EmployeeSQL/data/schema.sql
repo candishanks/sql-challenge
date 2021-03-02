@@ -49,3 +49,9 @@ CREATE TABLE dept_emp (
   FOREIGN KEY (emp_no) REFERENCES employees(emp_no), 
   FOREIGN KEY (dept_no) REFERENCES departments(dept_no)
 );
+
+--List employee #, last & first name, sex, and salary
+SELECT employees.emp_no, employees.first_name, employees.last_name, employees.sex, salaries.salary
+FROM salaries
+INNER JOIN employees ON
+employees.emp_no = salaries.emp_no;
